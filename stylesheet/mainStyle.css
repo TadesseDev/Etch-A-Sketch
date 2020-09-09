@@ -1,0 +1,237 @@
+
+html, body{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+}
+main{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 8% 15% 75%;
+    justify-items: center;
+    grid-template-areas: "nameTitle nameTitle"
+                        "headtTitle headtTitle"
+                        "leftContent sketch";
+}
+main div{
+    text-align: center;
+    color: #E9F1F4;
+}
+.title{
+    height: 90%;
+    width: 100%;
+    color: #49B9DB;
+    align-self: baseline;
+    grid-area: nameTitle;
+    background-color: #E9F1F4;
+    box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+}
+.header{
+    height: 70%;
+    width: 85%;
+    align-self: end;
+    grid-area: headtTitle;
+    background-color: #49B9DB;
+    display: flex;
+}
+.header p,.title p{
+    flex: 1;
+    margin: auto;
+    font-size: 1.3em;
+}
+.left{
+    height: 85%;
+    width: 75%;
+    justify-self: right;
+    align-self: center;
+    grid-area: leftContent;
+    background-color: #49B9DB;
+    display: flex;
+    flex-direction: column;
+
+}
+
+ol{
+list-style: none;
+margin: auto 0;
+justify-self: baseline;
+}
+ol li{
+text-align: left;
+padding: 4% 10%;
+}
+li:nth-child(2n+1){
+    padding-left: 2%;
+}
+li:last-child{
+    width: 50%;
+    height: 10%;
+    background-color: white;
+    color: black;
+    margin: 5% 10%;
+    display: flex;
+    border-radius: 30px;
+}
+li:last-child p{
+    margin: auto;
+}
+.sketch{
+    display: grid;
+    color: #49B9DB;
+    height: 85%;
+    width: 85%;
+    justify-self: left;
+    align-self: center;
+    margin-left: 4%;
+    grid-area: sketch;
+    border-radius: 30px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
+.sketch p{
+    margin-top: 0px;
+}
+#saveButton, #cancelButton{
+position: absolute;
+width: 60px;
+height: 60px;
+background-color: #af0a23c5;
+bottom: 10%;
+right: 10%;
+border-radius: 50%;
+border: none;
+box-shadow: 0px 0px 30px #0000008e;
+outline: none;
+padding: 0px;
+}
+#saveButton{
+    right: 17%;
+    background-color: #05c021c5;
+}
+#saveIcon,#cacelIcon{
+    width: 58px;
+    height: 58px;
+    /* border: 1px solid black; */
+    margin: 0px;
+    padding: 0px;
+    border-radius: 50%;
+}
+@media (max-width: 900px){
+    #saveButton, #cancelButton{
+        width: 40px;
+        height: 40px; 
+    }
+    #saveIcon,#cacelIcon{
+        width: 38px;
+        height: 38px;
+    }
+    
+}
+@media (max-height: 600px){
+    main{
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 6% 10% 55% auto;
+        grid-template-areas: "nameTitle nameTitle"
+                            "headtTitle headtTitle"
+                            "sketch sketch"
+                            "leftContent leftContent";
+    }
+    .sketch{
+        height: 98%;
+        width: 85%;
+        justify-self: center;
+        align-self: flex-end;
+        margin-left: 0%;
+    }
+    .left{
+        height: 95%;
+        width: 85%;
+        justify-self: center;
+        align-self: flex-end;
+        margin-right:  0%;
+    }
+    ol li{
+        padding: 0.5% 0.5%;
+        }
+        #saveButton, #cancelButton{
+            bottom: 30%;
+            right: 10%;
+            }
+            #saveButton{
+                right: 16%;
+            }
+}
+@media (max-width: 600px){
+    #saveButton, #cancelButton{
+        width: 30px;
+        height: 30px; 
+    }
+    #saveIcon,#cacelIcon{
+        width: 28px;
+        height: 28px;
+    }
+    main{
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 6% 10% 55% auto;
+        grid-template-areas: "nameTitle nameTitle"
+                            "headtTitle headtTitle"
+                            "sketch sketch"
+                            "leftContent leftContent";
+    }
+    .sketch{
+        height: 98%;
+        width: 85%;
+        justify-self: center;
+        align-self: flex-end;
+        margin-left: 0%;
+    }
+    .left{
+        height: 95%;
+        width: 85%;
+        justify-self: center;
+        align-self: flex-end;
+        margin-right:  0%;
+    }
+    ol li{
+        padding: 0.5% 0.5%;
+        }
+        #saveButton, #cancelButton{
+            bottom: 30%;
+            right: 10%;
+            }
+            #saveButton{
+                right: 16%;
+            }
+    
+}
+@media (max-height: 500px){
+    .header p,.title p{
+        font-size: 1em;
+    }
+    #saveButton, #cancelButton{
+        width: 30px;
+        height: 30px; 
+    }
+    #saveIcon,#cacelIcon{
+        width: 28px;
+        height: 28px;
+    }
+}
+@media (max-width: 499px){
+main{
+    width: 500px;
+}
+#saveButton, #cancelButton{
+    position: initial;
+    margin-top: 70px;
+    display: inline-block;
+    float: right;
+    margin-right: 3%;
+    }
+    #saveButton{
+        background-color: #10A226;
+    }
+}
