@@ -3,7 +3,7 @@ const canelButton=document.getElementById("cacelIcon");
 const cancelContext=canelButton.getContext("2d");
 const saveContext=saveButton.getContext("2d");
 
-/* drow the right tick */
+/* draw the right tick */
 saveContext.strokeStyle="white";
 saveContext.lineWidth=5;
 saveContext.moveTo(75,75);
@@ -13,7 +13,7 @@ saveContext.moveTo(100,100);
 saveContext.lineTo(240, 40); 
 saveContext.stroke();
 
-/* drow the cancel tick */
+/* draw the cancel tick */
 cancelContext.strokeStyle="white";
 cancelContext.lineWidth=5;
 cancelContext.moveTo(220, 30);
@@ -23,11 +23,11 @@ cancelContext.moveTo(80,30);
 cancelContext.lineTo(220,120);
 cancelContext.stroke();
 
-/*each a sketch */
+/*Etch a sketch */
 
 let pen=false;
 const sketch=document.querySelector(".sketch");
-let squares=prompt(`how much grid do you like to make. betwen 20 - 60 is sugested`);
+let squares=prompt(`how much grid do you like to make. between 20 - 60 is suggested`);
 while(!Number(squares)){
     squares=prompt(`you can only supply numbers`);
 }
@@ -79,7 +79,4 @@ canelButton.onclick=()=>{
 saveButton.onclick=()=>{
     alert('not emplimented yet');
 }
-// window.onresize=()=>{
-//     location.reload();
-// }
 console.log(counter);
