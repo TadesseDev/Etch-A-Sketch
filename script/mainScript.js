@@ -49,26 +49,45 @@ for(let i=0;i<squares;i++){
     counter++;
 }
 
-sketch.addEventListener(`click`,()=>{
-    if(!pen){
-    sketch.querySelectorAll('div').forEach(Element=>{
-        Element.onmouseover=()=>{
-            const colorArray=['red','green','yellow','blue','orange','cyan'];
-    Element.style.backgroundColor=colorArray[Math.floor(Math.random()*6)];
-        };
+function penDraw(){
+    sketch.addEventListener(`click`,()=>{
+        if(!pen){
+        sketch.querySelectorAll('div').forEach(Element=>{
+            Element.onmouseover=()=>{
+                const colorArray=['red','green','yellow','blue','orange','cyan'];
+        Element.style.backgroundColor=colorArray[Math.floor(Math.random()*6)];
+            };
+        });
+        pen=true;
+    }
+    else {
+        sketch.querySelectorAll('div').forEach(Element=>{
+            Element.onmouseover=()=>{
+                
+            };
+        });
+    
+        pen=false;
+    }
     });
-    pen=true;
 }
-else {
-    sketch.querySelectorAll('div').forEach(Element=>{
-        Element.onmouseover=()=>{
-            
-        };
-    });
+penDraw();
+/* key pressed */
+window.onkeydown=function(e){ 
+    console.log(e.keyCode);
+    if(!(101===Number(e.keyCode) || 69===Number(e.keyCode)))
+    return;
+sketch.querySelectorAll('div').forEach(Element=>{
+Element.onmouseover=()=>{
+    console.log(e.keyCode);
+Element.style.backgroundColor="white";
+};
+});};
+window.onkeyup=(e)=>{
+    penDraw(); 
+}
 
-    pen=false;
-}
-})
+
 
 /* cancel button*/
 canelButton.onclick=()=>{
