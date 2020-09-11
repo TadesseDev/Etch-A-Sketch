@@ -52,29 +52,32 @@ main div{
     background-color: #49B9DB;
     display: flex;
     flex-direction: column;
-
+    justify-content: space-around;
+    align-content: center;
 }
 
 ol{
+flex: 1;
 list-style: none;
-margin: auto 0;
-justify-self: baseline;
+margin: auto 0px;
 }
 ol li{
 text-align: left;
-padding: 4% 10%;
+padding: 0.5% 8%;
 }
 li:nth-child(2n+1){
     padding-left: 2%;
 }
-li:last-child{
-    width: 50%;
-    height: 10%;
-    background-color: white;
-    color: black;
-    margin: 5% 10%;
-    display: flex;
+#choseColor{
+    flex: 1;
+    background-color: #4A0235;
+    color: white;
+    outline: none;
+    border: none;
     border-radius: 30px;
+    font-size: 110%;
+    justify-self: flex-end;
+    flex-grow: initial;
 }
 li:last-child p{
     margin: auto;
@@ -91,9 +94,7 @@ li:last-child p{
     border-radius: 30px;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
 }
-.sketch p{
-    margin-top: 0px;
-}
+
 #saveButton, #cancelButton{
 position: absolute;
 width: 60px;
@@ -128,6 +129,14 @@ padding: 0px;
         width: 38px;
         height: 38px;
     }
+    ol{
+        margin: 0px;
+        padding: 0px;
+        }
+    ol li{
+        font-size: .9em;
+        padding: 0.5% 5%;
+        }
     
 }
 @media (max-height: 600px){
@@ -153,15 +162,14 @@ padding: 0px;
         align-self: flex-end;
         margin-right:  0%;
     }
+    ol{
+        padding: 0%;
+    }
     ol li{
         padding: 0.5% 0.5%;
         }
-        #saveButton, #cancelButton{
+    #saveButton, #cancelButton{
             bottom: 30%;
-            right: 10%;
-            }
-            #saveButton{
-                right: 16%;
             }
 }
 @media (max-width: 600px){
@@ -211,27 +219,13 @@ padding: 0px;
     .header p,.title p{
         font-size: 1em;
     }
-    #saveButton, #cancelButton{
-        width: 30px;
-        height: 30px; 
-    }
-    #saveIcon,#cacelIcon{
-        width: 28px;
-        height: 28px;
-    }
+   
+   /*working on to mak it a widow with only minimum of 
+   500W by 500H */
+  
 }
-@media (max-width: 499px){
-main{
-    width: 500px;
-}
-#saveButton, #cancelButton{
-    position: initial;
-    margin-top: 70px;
-    display: inline-block;
-    float: right;
-    margin-right: 3%;
-    }
-    #saveButton{
-        background-color: #10A226;
-    }
+@media (max-width: 500px){
+   
+
+
 }

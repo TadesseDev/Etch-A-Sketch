@@ -26,13 +26,20 @@ cancelContext.stroke();
 /*Etch a sketch */
 
 let pen=false;
+let colorChoice;
 const sketch=document.querySelector(".sketch");
-let squares=prompt(`how much grid do you like to make. between 20 - 60 is suggested`);
+
+colorChoiceButton=document.getElementById("choseColor");
+
+colorChoiceButton.onclick=()=>{colorChoice=prompt("color choice pleas ");}
+let squares=prompt(`how much grid (Width x Height) do you like to make. between 20 - 60 is suggested`);
 while(!Number(squares)){
     squares=prompt(`you can only supply numbers`);
 }
 let divWidth=sketch.clientWidth/squares;
 let divHeight=sketch.clientHeight/squares;
+
+/* create a grid area*/
 sketch.setAttribute(
     `style`,`
     grid-template-columns: repeat(${squares},${divWidth});
@@ -48,14 +55,13 @@ for(let i=0;i<squares;i++){
     }
     counter++;
 }
-
+sketch.addEventListener(`click`,penDraw);
 function penDraw(){
-    sketch.addEventListener(`click`,()=>{
-        if(!pen){
+    if(!pen){
         sketch.querySelectorAll('div').forEach(Element=>{
             Element.onmouseover=()=>{
                 const colorArray=['red','green','yellow','blue','orange','cyan'];
-        Element.style.backgroundColor=colorArray[Math.floor(Math.random()*6)];
+        Element.style.backgroundColor=colorChoice ?? colorArray[Math.floor(Math.random()*6)];
             };
         });
         pen=true;
@@ -69,25 +75,22 @@ function penDraw(){
     
         pen=false;
     }
-    });
 }
-penDraw();
 /* key pressed */
 window.onkeydown=function(e){ 
-    console.log(e.keyCode);
     if(!(101===Number(e.keyCode) || 69===Number(e.keyCode)))
     return;
 sketch.querySelectorAll('div').forEach(Element=>{
 Element.onmouseover=()=>{
-    console.log(e.keyCode);
 Element.style.backgroundColor="white";
 };
 });};
-window.onkeyup=(e)=>{
+
+/* key released */
+window.onkeyup=()=>{
+    pen=true;
     penDraw(); 
 }
-
-
 
 /* cancel button*/
 canelButton.onclick=()=>{
@@ -98,4 +101,6 @@ canelButton.onclick=()=>{
 saveButton.onclick=()=>{
     alert('not emplimented yet');
 }
-console.log(counter);
+window.onresize=()=>{
+    sketch.setAttribute('style','overflow: hidden');
+}
