@@ -78,6 +78,7 @@ li:nth-child(2n+1){
     font-size: 110%;
     justify-self: flex-end;
     flex-grow: initial;
+    padding: 3%;
 }
 li:last-child p{
     margin: auto;
@@ -99,7 +100,7 @@ li:last-child p{
 position: absolute;
 width: 60px;
 height: 60px;
-background-color: #af0a23c5;
+background-color: #4A0235;
 bottom: 10%;
 right: 10%;
 border-radius: 50%;
@@ -110,7 +111,7 @@ padding: 0px;
 }
 #saveButton{
     right: 17%;
-    background-color: #05c021c5;
+    background-color: #047014dc;
 }
 #saveIcon,#cacelIcon{
     width: 58px;
