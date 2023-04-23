@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-[Go Live](https://tadesse-alemayehu.github.io/Etch-A-Sketch/) 🙂
+[Go Live](https://tadessedev.github.io/Etch-A-Sketch/) 🙂
 
 ## Getting Started
 
